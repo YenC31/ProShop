@@ -3,7 +3,7 @@
 ///  <Navbar /> despues del div
 
 import React from "react";
-import { ItemListCOntainer } from "../components/ItemListContainer/ItemListContainer";
+import { ItemListContainer } from "../components/ItemListContainer/ItemListContainer";
 import Navbar from "../components/NavBar/NavBar.jsx";
 
 const Home = () => {
@@ -11,7 +11,8 @@ const Home = () => {
     <div>
       <Navbar />
       <br />
-      <ItemListCOntainer greeting="Hola este es el Saludo de ItemListsContainers!"></ItemListCOntainer>
+      <h3>Productos</h3>
+      <ItemListContainer></ItemListContainer>
     </div>
   );
 };
