@@ -4,15 +4,14 @@
 
 import React from "react";
 import { ItemListContainer } from "../components/ItemListContainer/ItemListContainer";
-import Navbar from "../components/NavBar/NavBar.jsx";
+import { Announcement } from "../components/Announcement/Announcement";
+import { ClotheApi } from "../ClotheApi/ClotheApi";
+import { NavBar } from "../components/NavBar/NavBar";
 
 const Home = () => {
   return (
     <div>
-      <Navbar />
-      <br />
-      <h3>Productos</h3>
-      <ItemListContainer></ItemListContainer>
+      <ClotheApi />
     </div>
   );
 };

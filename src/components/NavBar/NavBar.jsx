@@ -2,9 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { Badge } from "@material-ui/core";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
-  height: 60px;
+  height: 80px;
 `;
 
 const Roll = styled.div`
@@ -45,12 +46,7 @@ const Right = styled.div`
   display: flex;
   text-aling: center;
   justify-content: flex-end;
-`;
-
-const MenuItem = styled.div`
-  font-size: 14px;
-  cursor: pointer;
-  margin-left: 25px;
+  text-decoration: none;
 `;
 
 const Logo = styled.div`
@@ -59,7 +55,15 @@ const Logo = styled.div`
   text-aling: center;
 `;
 
-const Navbar = () => {
+const limked = styled.div`
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+`;
+
+export const NavBar = () => {
   return (
     <Container>
       <Roll>
@@ -67,22 +71,38 @@ const Navbar = () => {
           <Lang>EN</Lang>
           <ContainerBusqueda>
             <Entrada />
-            <Search style={{ color: "gray", fontSize: 16 }} />
+            <Search style={{ color: "gray", fontSize: 12 }} />
           </ContainerBusqueda>
         </Left>
-        <Logo>ProShop</Logo>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
-          <MenuItem>
+          <Link to="/productos" style={{ color: "white", fontSize: 20 }}>
+            LOGO&nbsp;
+          </Link>
+          <Link
+            to="/productos/vestido"
+            style={{ color: "white", fontSize: 20 }}
+          >
+            VESTIDO&nbsp;
+          </Link>
+          <Link to="/productos/blusa" style={{ color: "white", fontSize: 20 }}>
+            BLUSA&nbsp;
+          </Link>
+          <Link
+            to="/productos/pantalon"
+            style={{ color: "white", fontSize: 20 }}
+          >
+            PANTALON&nbsp;
+          </Link>
+          <Link to="/productos/short" style={{ color: "white", fontSize: 20 }}>
+            SHORT&nbsp;
+          </Link>
+          <div>
             <Badge badgeContent={2} color="primary">
               <ShoppingCartOutlined />
             </Badge>
-          </MenuItem>
+          </div>
         </Right>
       </Roll>
     </Container>
   );
 };
-
-export default Navbar;
